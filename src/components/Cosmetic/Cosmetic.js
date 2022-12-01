@@ -1,11 +1,18 @@
 import React from 'react';
+import './Cosmetic'
 
 const Cosmetic = (props) => {
-    const {name,price} = props.cosmetic; // destructuring for reducing code from below to get into object key and value
+    const {name,age} = props.cosmetic; // destructuring for reducing code to reduce from below to get into object key and value
+    const addToCart = (age) =>{
+        console.log('add to cart',age)                          
+    }
+    const addToAgeWithPara = () => addToCart(age)// first system for eventHandler
     return (
-        <div style={{border:"3px solid yellow"}}>
+        <div className='product'style={{border:'4px solid red'}} >
             <h3>name : {name}</h3>
-            <p>age : {price}</p>
+            <p>price : {age}</p>
+            <button onClick={addToAgeWithPara} style={{marginBottom:'10px'}}>add to age</button> {/*first system for eventHandler*/}
+            <button onClick={() => addToCart(age)} style={{marginBottom:'10px'}}>subs to age</button>{/*second system for eventHandler direct*/}
         </div>
     );
 };
