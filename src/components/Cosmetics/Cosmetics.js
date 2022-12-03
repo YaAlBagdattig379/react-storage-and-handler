@@ -6,6 +6,7 @@ const Cosmetics = () => {
     fetch('Data.json')// this file are created in public folder of react
     .then(res => res.json())
     .then(data => setCosmetics(data));
+        // console.log(cosmetics[0].name);
   },[])
     // const cosmetics = [// first system to generate data
     //     {name:'fair lovely Category-A',id:'1',price:'20',weight:'6grm'},
@@ -39,7 +40,7 @@ const Cosmetics = () => {
     // ]
     return (
         <div style={{border:'4px solid green'}}>
-            <h1>Welcome to my Cosmetics Store</h1>
+            <h1>Welcome To My Cosmetics Store</h1>
             {
                 cosmetics.map(cosmetic => <Cosmetic key={cosmetic.id} cosmetic ={cosmetic}></Cosmetic>)
             }

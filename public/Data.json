@@ -1,27 +1,27 @@
 [
     {
-        "age": 31,
         "name": "Kelli Johns",
+        "price": 31,
         "id": 323
       },
       {
-        "age": 31,
         "name": "Deleon Horton",
+        "price": 45,
         "id": 123
       },
       {
-        "age": 32,
         "name": "Rasmussen Schroeder",
+        "price": 32,
         "id": 143
       },
       {
-        "age": 25,
         "name": "Phelps Soto",
+        "price": 25,
         "id": 875
       },
       {
-        "age": 20,
         "name": "jack maa",
+        "price": 20,
         "id":565
       }
 ]

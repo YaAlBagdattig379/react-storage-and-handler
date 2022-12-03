@@ -1,18 +1,23 @@
 import React from 'react';
-import './Cosmetic'
-
+import './Cosmetic';
+import { addToDb } from '../../utilities/fakeDb';
 const Cosmetic = (props) => {
-    const {name,age} = props.cosmetic; // destructuring for reducing code to reduce from below to get into object key and value
-    const addToCart = (age) =>{
-        console.log('add to cart',age)                          
+    const {name,price} = props.cosmetic; // destructuring for reducing code to reduce from below to get into object key and value
+    const addToCart = (name) =>{
+        addToDb(name); //localStorprice.setItem('products',price)                                   
     }
-    const addToAgeWithPara = () => addToCart(age)// first system for eventHandler
+    const addToPriceWithPara = () => addToCart(name)// first system for eventHandler
     return (
-        <div className='product'style={{border:'4px solid red'}} >
-            <h3>name : {name}</h3>
-            <p>price : {age}</p>
-            <button onClick={addToAgeWithPara} style={{marginBottom:'10px'}}>add to age</button> {/*first system for eventHandler*/}
-            <button onClick={() => addToCart(age)} style={{marginBottom:'10px'}}>subs to age</button>{/*second system for eventHandler direct*/}
+        <div style={{border:'4px solid red'}} >
+            <h3>Name : {name}</h3>
+            
+            <p>Price : {price}</p>
+            <button onClick={addToPriceWithPara} style={{marginBottom:'10px'}}>add to addToCart</button> {/*first system for eventHandler*/}
+            {/* <button onClick={() => addToCart(name)} style=
+            {{marginBottom:'10px'}}>purchase</button> */}
+            {/* second system for eventHandler direct */}
+            <button onClick={() => addToCart(name)} style={{marginBottom:'10px'}}>purchase</button>
+            {/* second system for eventHandler direct */}
         </div>
     );
 };
