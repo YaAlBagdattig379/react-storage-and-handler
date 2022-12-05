@@ -1,5 +1,4 @@
 // use local Storage price to manage price cart data
-
 /*
 const addToDb = (name) =>{ // v-47-5-5 and ager videor 
     /*
@@ -24,16 +23,42 @@ const addToDb = (name) =>{ // v-47-5-5 and ager videor
 
 
 
-
+/*
 const addToDb = (name) =>{ // v-47-5-6 to store multiple data in an with 
            //                                              localStorage   
-    /**
+        /*
         localStorage set item and add with multi-click key with multiple 
         key and multiple value as a object  
         from v-47-5-6 videos 
-    */
-    let shoppingCart ;
+        /
+
+        let shoppingCart ;
+        // get the shopping cart
+        const storedCart = localStorage.getItem('Shopping Cart H.Alam')
+        if(storedCart){
+            shoppingCart = JSON.parse(storedCart);
+        }else{
+            shoppingCart = {};
+        }
     
+        // add quantity
+        const quantity = shoppingCart[name];
+        if(quantity){ 
+           const newQuantity =  parseInt(quantity) + 1;
+           shoppingCart[name] = newQuantity;
+        }
+        else{
+            shoppingCart[name] = 1;
+        } 
+        localStorage.setItem('Shopping Cart H.Alam',JSON.stringify(shoppingCart)) 
+    
+    }
+    export { addToDb }; 
+*/                           
+
+const addToDb = (name) =>{ // v-47-5-7 to store multiple data in an with 
+           //                                              localStorage   
+    let shoppingCart ;
     // get the shopping cart
     const storedCart = localStorage.getItem('Shopping Cart H.Alam')
     if(storedCart){
@@ -41,19 +66,15 @@ const addToDb = (name) =>{ // v-47-5-6 to store multiple data in an with
     }else{
         shoppingCart = {};
     }
-
     // add quantity
     const quantity = shoppingCart[name];
     if(quantity){ 
        const newQuantity =  parseInt(quantity) + 1;
        shoppingCart[name] = newQuantity;
-        // localStorage.setItem(name,newQuantity);
     }
     else{
         shoppingCart[name] = 1;
-        // localStorage.setItem(name,1);
     } 
     localStorage.setItem('Shopping Cart H.Alam',JSON.stringify(shoppingCart)) 
-
 }
 export { addToDb };                            
