@@ -28,12 +28,12 @@ const addToDb = (name) =>{ // v-47-5-5 and ager videor
 const addToDb = (name) =>{ // v-47-5-6 to store multiple data in an with 
            //                                              localStorage   
     /**
-        localStorage set item and add with multi-click value of key
-        localStorage set item and add with multi-click value of key
+        localStorage set item and add with multi-click key with multiple 
+        key and multiple value as a object  
         from v-47-5-6 videos 
     */
     let shoppingCart ;
-    // localStorage.setItem('Shopping Alam',shoppingCard)
+    
     // get the shopping cart
     const storedCart = localStorage.getItem('Shopping Cart H.Alam')
     if(storedCart){
@@ -41,7 +41,6 @@ const addToDb = (name) =>{ // v-47-5-6 to store multiple data in an with
     }else{
         shoppingCart = {};
     }
-
 
     // add quantity
     const quantity = shoppingCart[name];
@@ -54,17 +53,7 @@ const addToDb = (name) =>{ // v-47-5-6 to store multiple data in an with
         shoppingCart[name] = 1;
         // localStorage.setItem(name,1);
     } 
-    localStorage.setItem('Shopping Cart H.Alam',JSON.stringify(shoppingCart))
- 
+    localStorage.setItem('Shopping Cart H.Alam',JSON.stringify(shoppingCart)) 
 
-/* from v-5-5
-    if(quantity){ 
-       const newQuantity =  parseInt(quantity) + 1;
-        localStorage.setItem(name,newQuantity);
-    }
-    else{
-        localStorage.setItem(name,1);
-    } 
- */ 
 }
 export { addToDb };                            
