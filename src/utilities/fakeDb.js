@@ -77,4 +77,26 @@ const addToDb = (name) =>{ // v-47-5-7 to store multiple data in an with
     } 
     localStorage.setItem('Shopping Cart H.Alam',JSON.stringify(shoppingCart)) 
 }
-export { addToDb };                            
+
+// data remove from localStorage  v-47-5-7
+const removeFromDb = name =>{
+    const storedCart = localStorage.getItem('Shopping Cart H.Alam');
+    if(storedCart){
+        const shoppingCart = JSON.parse(storedCart);
+        if(name in shoppingCart){
+            delete shoppingCart[name]
+            localStorage.setItem('Shopping Cart H.Alam',JSON.stringify(shoppingCart));
+        }
+    }
+}
+
+
+
+
+// to delete whole key and value 
+const deleteShoppingCart = () =>{
+    localStorage.removeItem('Shopping Cart H.Alam')
+    console.log()
+}
+
+export { addToDb , removeFromDb , deleteShoppingCart};                            
