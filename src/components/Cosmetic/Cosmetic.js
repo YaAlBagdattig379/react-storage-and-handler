@@ -26,8 +26,10 @@ const Cosmetic = (props) => {
             {/* <button onClick={() => addToCart(name)} style={{marginBottom:'10px'}}>purchase</button> */}
             {/* second system for eventHandler direct */}
 
+
             {/* remove button  */}
             <button onClick={() => removeFromCart(name)} style={{marginBottom:'10px'}}>remove</button>
+
 
             {/* to remove whole shoppingCarat button  */}
             <button onClick={() => deleteShoppingCart ()} style={{marginBottom:'10px'}}>deleteShoppingCart</button>
